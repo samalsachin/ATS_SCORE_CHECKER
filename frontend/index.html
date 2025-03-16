@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Score Checker</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0073e6;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .account-btn, .check-btn {
+            background-color: #ffcc4d;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .hero {
+            padding: 50px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 400px;
+            margin: auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffcc4d;
+        }
+
+        .upload-btn {
+            display: block;
+            background:#ffcc4d;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .upload-btn:hover {
+            background: #00cc99;
+        }
+
+        #scoreResult {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ffcc4d;
+        }
+
+        .loader {
+            display: none;
+            margin: 10px auto;
+            width: 40px;
+            height: 40px;
+            border: 5px solid white;
+            border-top: 5px solid #00ffcc;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-top: auto;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .footer-logos {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .footer-logos img {
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">ATS Score Checker</div>
+    <nav>
+        <ul>
+            <li>Tools</li>
+            <li>Resume</li>
+            <li>CV</li>
+            <li>Cover Letter</li>
+            <li>Career Blog</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    <button class="account-btn">My Account</button>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>ATS Resume Checker: Score Your Resume Online</h1><br>
+        <p>Boost your chances of landing the job with our ATS resume checker. Scan your resume, get a personalized score.</p>
+    </section>
+
+    <div class="container">
+        <h2>Upload Your Resume</h2>
+        <label for="resumeFile" class="upload-btn">Upload Resume</label>
+        <input type="file" id="resumeFile" class="file-input" accept=".pdf, .docx" style="display: none;">
+        <div class="loader" id="loader"></div>
+        <h3 id="scoreResult"></h3>
+    </div>
+</main>
+
+<footer>
+    <p>Our customers have been hired by:</p>
+    <div class="footer-logos">
+        <img src="1.jpeg" alt="Microsoft">
+        <img src="2.jpeg" alt="Amazon">
+        <img src="3.png" alt="AT&T">
+        <img src="5.png" alt="Walmart">
+        <img src="4.jpeg" alt="FedEx">
+        <img src="6.jpeg" alt="Orange">
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
